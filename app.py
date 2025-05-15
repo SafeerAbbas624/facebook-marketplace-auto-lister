@@ -182,10 +182,16 @@ class Item:
         try:
             log('Entering The Vehicle Make', 'main')
             title_input = Element(self.driver, 'vehicle_make').element
-            title_input.clear()
-            title_input.send_keys(self.item['make'])
-            log('Entered vehicle make Successfully .', 'success')
-            return True
+            title_input.click()
+            values = self.item['vehicle_make'] if 'vehicle_make' in self.item.keys() and self.item['vehicle_make'] else None
+            category_dropdown_option = Element(self.driver, 'vehicle_make_option', values).element
+            print(Element(self.driver, 'vehicle_make_option', values).xpath)
+            print(Element(self.driver, 'vehicle_make_option', values).xpath)
+            print(Element(self.driver, 'vehicle_make_option', values).xpath)
+            print(Element(self.driver, 'vehicle_make_option', values).xpath)
+            print(Element(self.driver, 'vehicle_make_option', values).xpath)
+            log('clicking The vehicle type Dropdown ..', 'sub')
+            category_dropdown_option.click()
         except:
             log('FAILED TO ENTER THE Make', 'failure')
             return False
@@ -732,26 +738,26 @@ class Lister:
         listing_item.enter_vehicle_model()
         time.sleep(self.sleep_time)
         
-        # listing_item.enter_vehicle_mileage()
-        # time.sleep(self.sleep_time)
+        listing_item.enter_vehicle_mileage()
+        time.sleep(self.sleep_time)
         
         listing_item.enter_price()
         time.sleep(self.sleep_time)
 
-        # listing_item.choose_vehicle_body_style()
-        # time.sleep(self.sleep_time)
+        listing_item.choose_vehicle_body_style()
+        time.sleep(self.sleep_time)
 
-        # listing_item.choose_exterior_color()
-        # time.sleep(self.sleep_time)
+        listing_item.choose_exterior_color()
+        time.sleep(self.sleep_time)
 
-        # listing_item.choose_interior_color()
-        # time.sleep(self.sleep_time)
+        listing_item.choose_interior_color()
+        time.sleep(self.sleep_time)
         
-        # listing_item.choose_vehicle_fuel_type()
-        # time.sleep(self.sleep_time)
+        listing_item.choose_vehicle_fuel_type()
+        time.sleep(self.sleep_time)
         
-        # listing_item.choose_vehicle_transmission()
-        # time.sleep(self.sleep_time)
+        listing_item.choose_vehicle_transmission()
+        time.sleep(self.sleep_time)
         
         listing_item.enter_description()
         time.sleep(self.sleep_time)
