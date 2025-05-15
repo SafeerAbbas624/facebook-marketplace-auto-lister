@@ -4,6 +4,13 @@ facebook_cookies.json
 products.json
 accounts.json
 "accounts copy.json"
+products.xlsx
+images/image*.jpg
+
+# Archive and build files
+*.zip
+ConvertedFiles*/
+FB_MarketplaceV1*
 
 # Python
 __pycache__/
