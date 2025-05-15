@@ -771,7 +771,6 @@ class Lister:
 class Main:
     def __init__(self):
         self.products = self.read_excel("products.xlsx")
-        self.validate_license("2025-5-15 12:10:00")
         self.lister = Lister()
 
     def read_excel(self, file_path):
@@ -816,14 +815,6 @@ class Main:
         for image in os.listdir("images"):
             os.remove(os.path.join("images", image))
 
-    def validate_license(self, expiry_date):
-        today = datetime.today()
-        expiry = datetime.strptime(expiry_date, '%Y-%m-%d %H:%M:%S')
-        if today > expiry:
-            print("License expired. Please contact support.")
-            exit()
-        else:
-            print("License valid. Enjoy the script!")
 
 
 if __name__ == "__main__":
